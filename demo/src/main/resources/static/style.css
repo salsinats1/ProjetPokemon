@@ -1,0 +1,310 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, html body {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000000 !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+    min-height: 100vh;
+    color: #ffffff !important;
+}
+
+/* Force le fond noir sur tous les éléments parents */
+body, body *, html {
+    background-image: none !important;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000 !important;
+    z-index: -1;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    color: #fff;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Contrôles */
+.controls {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #4ECDC4, #44A08D);
+    color: white;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.6);
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+}
+
+/* Grille des cartes */
+.cartes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Carte individuelle */
+.carte {
+    background: #1a1a1a;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.carte::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
+}
+
+.carte:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+}
+
+.carte-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.carte-nom {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.carte-id {
+    font-size: 0.9rem;
+    color: #cccccc;
+    font-weight: bold;
+}
+
+.carte-niveau {
+    font-size: 0.8rem;
+    color: #ff6b6b;
+    font-weight: bold;
+    background: #2a2a2a;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    margin-top: 0.3rem;
+    display: inline-block;
+}
+
+.carte-sprite {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.sprite-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.carte:hover .sprite-img {
+    transform: scale(1.1);
+}
+
+.carte-info {
+    margin-top: 1rem;
+}
+
+.carte-types {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.type-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Couleurs des types Pokémon */
+.type-normal { background: #A8A878; }
+.type-fire { background: #F08030; }
+.type-water { background: #6890F0; }
+.type-electric { background: #F8D030; }
+.type-grass { background: #78C850; }
+.type-ice { background: #98D8D8; }
+.type-fighting { background: #C03028; }
+.type-poison { background: #A040A0; }
+.type-ground { background: #E0C068; }
+.type-flying { background: #A890F0; }
+.type-psychic { background: #F85888; }
+.type-bug { background: #A8B820; }
+.type-rock { background: #B8A038; }
+.type-ghost { background: #705898; }
+.type-dragon { background: #7038F8; }
+.type-dark { background: #705848; }
+.type-steel { background: #B8B8D0; }
+.type-fairy { background: #EE99AC; }
+
+.carte-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.stat-item {
+    background: #2a2a2a;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #cccccc;
+    margin-bottom: 0.2rem;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* Messages d'erreur */
+.error-message {
+    background: #3d1a1a;
+    color: #cc6666;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 2rem;
+    text-align: center;
+    border: 1px solid #5a2d2d;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cartes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .carte {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cartes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls {
+        padding: 0 1rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        display: block;
+        margin: 0.5rem auto;
+        width: 80%;
+    }
+}

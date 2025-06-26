@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: cartes_db
+    environment:
+      POSTGRES_DB: cartesdb
+      POSTGRES_USER: cartes_user
+      POSTGRES_PASSWORD: cartes_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - cartes_network
+
+volumes:
+  postgres_data:
+
+networks:
+  cartes_network:
+    driver: bridge

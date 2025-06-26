@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection de Cartes Pokémon</title>
+    <link rel="stylesheet" href="style.css?v=2">>
+</head>
+<body>
+    <header>
+        <h1>🎮 Collection de Cartes Pokémon 🎮</h1>
+        <p>Découvrez votre collection de cartes Pokémon avec leurs sprites officiels</p>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button id="chargerPokemons" class="btn-primary">Charger plus de Pokémons</button>
+            <button id="rafraichir" class="btn-secondary">Rafraîchir</button>
+            <a href="auth.html" class="btn-secondary">👤 Mon Espace</a>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <p>Chargement des Pokémons...</p>
+        </div>
+
+        <div id="cartes-container" class="cartes-grid">
+            <!-- Les cartes seront chargées ici par JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 - Application Spring Boot Pokémon API</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

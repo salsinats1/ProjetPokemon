@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Collection Pokémon</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>🎮 Collection Pokémon 🎮</h1>
+                <p>Connectez-vous à votre espace</p>
+            </div>
+
+            <!-- Formulaire de connexion -->
+            <div id="login-form" class="auth-form">
+                <h2>Connexion</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Nom d'utilisateur</label>
+                        <input type="text" id="loginUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Mot de passe</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Se connecter</button>
+                </form>
+                
+                <p class="auth-switch">
+                    Pas encore de compte ? 
+                    <a href="#" onclick="showRegister()">S'inscrire</a>
+                </p>
+            </div>
+
+            <!-- Formulaire d'inscription -->
+            <div id="register-form" class="auth-form" style="display: none;">
+                <h2>Inscription</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">Nom d'utilisateur</label>
+                        <input type="text" id="registerUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Mot de passe</label>
+                        <input type="password" id="registerPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmer le mot de passe</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary">S'inscrire</button>
+                </form>
+                
+                <p class="auth-switch">
+                    Déjà un compte ? 
+                    <a href="#" onclick="showLogin()">Se connecter</a>
+                </p>
+            </div>
+
+            <div id="message" class="message" style="display: none;"></div>
+        </div>
+
+        <div class="auth-footer">
+            <p><a href="index.html">← Retour à l'accueil</a></p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

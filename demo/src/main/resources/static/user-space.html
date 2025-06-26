@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Espace - Collection Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="user-space.css">
+</head>
+<body>
+    <header class="user-header">
+        <div class="user-info">
+            <h1>🎮 Mon Espace Pokémon</h1>
+            <div class="user-details">
+                <span id="username">Chargement...</span>
+                <span class="argent">💰 <span id="argent">0</span> pièces</span>
+            </div>
+        </div>
+        <nav class="user-nav">
+            <a href="index.html">🏠 Accueil</a>
+            <a href="#" id="collection-tab" class="active">📚 Ma Collection</a>
+            <a href="#" id="market-tab">🛒 Market</a>
+            <a href="#" onclick="logout()">🚪 Déconnexion</a>
+        </nav>
+    </header>
+
+    <main class="user-main">
+        <!-- Section Ma Collection -->
+        <section id="collection-section" class="content-section active">
+            <div class="section-header">
+                <h2>📚 Ma Collection de Cartes</h2>
+                <p>Voici toutes les cartes que vous possédez</p>
+            </div>
+            
+            <div class="collection-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-cartes">0</div>
+                    <div class="stat-label">Cartes possédées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="types-uniques">0</div>
+                    <div class="stat-label">Types différents</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="valeur-collection">0</div>
+                    <div class="stat-label">Valeur totale</div>
+                </div>
+            </div>
+
+            <div id="ma-collection" class="cartes-grid">
+                <div class="empty-collection">
+                    <h3>🎯 Collection vide</h3>
+                    <p>Vous n'avez pas encore de cartes dans votre collection.</p>
+                    <p>Rendez-vous sur le <strong>Market</strong> pour acheter vos premières cartes !</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Market -->
+        <section id="market-section" class="content-section">
+            <div class="section-header">
+                <h2>🛒 Market - Achetez des Cartes</h2>
+                <p>Découvrez et achetez de nouvelles cartes Pokémon</p>
+            </div>
+
+            <div class="market-controls">
+                <button id="charger-market" class="btn-primary">Actualiser le Market</button>
+                <div class="filters">
+                    <select id="type-filter">
+                        <option value="">Tous les types</option>
+                        <option value="fire">Feu</option>
+                        <option value="water">Eau</option>
+                        <option value="grass">Plante</option>
+                        <option value="electric">Électrique</option>
+                        <option value="normal">Normal</option>
+                    </select>
+                    <select id="price-filter">
+                        <option value="">Tous les prix</option>
+                        <option value="0-5">0-5 pièces</option>
+                        <option value="6-10">6-10 pièces</option>
+                        <option value="11+">11+ pièces</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="market-cartes" class="cartes-grid">
+                <div class="loading">Chargement du market...</div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Fonction de déconnexion locale
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'auth.html';
+        }
+    </script>
+    <script src="user-space.js"></script>
+</body>
+</html>
