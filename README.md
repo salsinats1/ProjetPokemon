@@ -2,8 +2,6 @@
 
 ## 📝 Description du Projet
 
-Salut ! Voici notre projet de fin de semestre : une application web pour gérer une collection de cartes Pokémon. 
-
 L'idée c'est de créer un marché virtuel où les utilisateurs peuvent :
 - Voir des cartes Pokémon avec leurs sprites officiels
 - Acheter des cartes avec de l'argent virtuel
@@ -48,8 +46,8 @@ src/main/java/com/example/demo/
 ## 🚀 Comment Lancer le Projet
 
 ### Prérequis
-- Java 17+ 
-- Maven 3.6+
+- Java 
+- Maven 3.6
 
 ### Installation
 
@@ -66,7 +64,7 @@ src/main/java/com/example/demo/
 
 3. **Ouvrir dans le navigateur :**
    ```
-   http://localhost:8080
+   http://localhost:8082
    ```
 
 > **Note :** Si le port 8080 est occupé, l'application se lancera automatiquement sur un autre port (8081, 8082, etc.)
